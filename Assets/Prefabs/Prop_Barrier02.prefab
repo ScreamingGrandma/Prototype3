@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 8355585171616908661}
   m_Layer: 0
   m_Name: Prop_Barrier02
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,3 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0afbfacf0769442b1c7a4ac80094b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstaclePrefab: {fileID: 0}
+  spawnPos: {x: 25, y: 0, z: 0}
+  startDelay: 2
+  repeatRate: 2

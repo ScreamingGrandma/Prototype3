@@ -740,6 +740,7 @@ MonoBehaviour:
   jumpForce: 2000
   gravityModifier: 5
   isOnGround: 1
+  gameOver: 0
 --- !u!1001 &7626474414205283743
 PrefabInstance:
   m_ObjectHideFlags: 0
