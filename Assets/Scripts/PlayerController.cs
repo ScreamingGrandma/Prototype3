@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 
     public bool gameOver = false;
 
+    public bool doubleJumpUsed = false;
+
     private Animator playerAnim;
 
     public ParticleSystem dirtParticle;
@@ -45,6 +47,15 @@ public class PlayerController : MonoBehaviour
 
             playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
+        else if (Input.GetKeyDown(KeyCode.Space) && !isOnGround && !gameOver && !doubleJumpUsed)
+        {
+            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            doubleJumpUsed = true;
+            playerAnim.SetTrigger("Jump_trig");
+            dirtParticle.Stop();
+            
+            playerAudio.PlayOneShot(jumpSound, 1.0f);
+        }
     }
 
 
@@ -56,6 +67,8 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
+
+            doubleJumpUsed = false;
 
             if (!gameOver)
             dirtParticle.Play();
